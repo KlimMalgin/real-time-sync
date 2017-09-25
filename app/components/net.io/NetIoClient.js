@@ -1,3 +1,8 @@
+
+var IgeClass = require('../common/IgeClass');
+var IgeEventingClass = require('../common/IgeEventingClass');
+var WebSocket = require('websocket');
+
 // Our namespace
 var NetIo = {};
 
@@ -184,3 +189,5 @@ NetIo.Client = NetIo.EventingClass.extend({
 		return JSON.parse(data);
 	}
 });
+
+if (typeof(module) !== 'undefined' && typeof(module.exports) !== 'undefined') { module.exports = NetIo; }

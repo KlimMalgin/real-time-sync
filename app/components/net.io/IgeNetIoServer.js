@@ -1,3 +1,6 @@
+
+var ige = require('../common/ige');
+
 var IgeNetIoServer = {
 	_idCounter: 0,
 	_requests: {},

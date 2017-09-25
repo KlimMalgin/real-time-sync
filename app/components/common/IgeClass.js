@@ -1,3 +1,9 @@
+
+var igeConfig = require('./igeConfig');
+
+// Define the global storage object for classes
+var igeClassStore = {};
+
 /**
  * The base class system.
  */

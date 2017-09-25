@@ -1,3 +1,9 @@
+
+var ige = require('../common/ige');
+var WebSocket = require('websocket');
+var NetIo = require('./NetIoClient');
+
+
 /**
  * The client-side net.io component. Handles all client-side
  * networking systems.

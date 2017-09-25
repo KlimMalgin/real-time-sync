@@ -1,3 +1,13 @@
+
+var ige = require('./ige');
+
+var IgeTimeSyncExtension = require('./IgeTimeSyncExtension');
+var IgeEventingClass = require('./IgeEventingClass');
+
+var IgeNetIoServer = require('../net.io/IgeNetIoServer');
+var IgeNetIoClient = require('../net.io/IgeNetIoClient');
+
+
 var IgeNetIoComponent = IgeEventingClass.extend([
 	{extension: IgeTimeSyncExtension, overwrite: false}
 ], {
@@ -28,15 +38,16 @@ var IgeNetIoComponent = IgeEventingClass.extend([
 		/* CEXCLUDE */
 		if (ige.isServer) {
 			this.implement(IgeNetIoServer);
-			this._netio = require('../../../' + modulePath + 'net.io-server').Server;
+			this._netio = require('../net.io/NetIoServer').Server;
 			this._acceptConnections = false;
 		}
 		/* CEXCLUDE */
 
-		if (ige.isClient) {
+		console.log('WARN: ige.isClient COMMENTED');
+		/*if (ige.isClient) {
 			this._netio = IgeNetIoClient;
 			this.implement(IgeNetIoClient);
-		}
+		}*/
 
 		this.log('Network component initiated with Net.IO version: ' + this._netio.version);
 	},

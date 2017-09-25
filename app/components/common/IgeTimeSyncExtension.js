@@ -1,3 +1,6 @@
+
+var ige = require('./ige');
+
 /**
  * Adds client/server time sync capabilities to the network system.
  * This handles calculating the time difference between the clock
