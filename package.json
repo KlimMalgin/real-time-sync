@@ -1,0 +1,25 @@
+{
+  "name": "real-time-sync-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KlimMalgin/real-time-sync-server.git"
+  },
+  "author": "KlimMalgin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KlimMalgin/real-time-sync-server/issues"
+  },
+  "homepage": "https://github.com/KlimMalgin/real-time-sync-server#readme",
+  "dependencies": {
+    "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^0.4.6"
+  }
+}
