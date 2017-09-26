@@ -1,6 +1,5 @@
 
 var ige = require('../common/ige');
-var WebSocket = require('websocket');
 var NetIo = require('./NetIoClient');
 
 
@@ -46,7 +45,7 @@ var IgeNetIoClient = {
 
 			this.log('Connecting to net.io server at "' + this._url + '"...');
 
-			if (typeof(WebSocket) !== 'undefined') {
+			if (typeof(NetIo) !== 'undefined') {
 				this._io = new NetIo.Client(url);
 				self._state = 1; // Connecting
 

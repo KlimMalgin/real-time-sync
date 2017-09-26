@@ -40,15 +40,17 @@ if ( process.env.NODE_ENV === 'production' ) {
     module.exports.plugins = ( module.exports.plugins || [] ).concat( [
         new webpack.DefinePlugin( { 'process.env' : {
             NODE_ENV : `"${process.env.NODE_ENV}"`,
-            IS_CLIENT: `"${process.env.IS_CLIENT}"`,
-        } } ),
+        },
+        IS_CLIENT: "true",
+     } ),
         new webpack.optimize.UglifyJsPlugin( { sourceMap: options.devtool && options.devtool.indexOf('source-map') >= 0 } ),
     ] );
 } else {
     module.exports.plugins = ( module.exports.plugins || [] ).concat( [
         new webpack.DefinePlugin( { 'process.env' : {
             NODE_ENV : `"${process.env.NODE_ENV}"`,
-            IS_CLIENT: `"${process.env.IS_CLIENT}"`,
-        } } ),
+        },
+        IS_CLIENT: "true",
+        } ),
     ] );
 }

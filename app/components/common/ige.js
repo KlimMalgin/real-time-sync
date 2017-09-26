@@ -1,5 +1,5 @@
 
-var isClient = (typeof(IS_CLIENT) !== 'undefined' && IS_CLIENT);
+var isClient = !!(typeof(IS_CLIENT) !== 'undefined' && IS_CLIENT);
 
 /**
  * Emulation ige object

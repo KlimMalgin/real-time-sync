@@ -16,8 +16,13 @@ var RtsServer = IgeClass.extend({
             .network.start(3003, function () {
 
                 console.log('register some event');
-                self.network.define('someEvent', function () { console.log('server::someEvent: ', arguments); });
+                self.network.define('someEvent', function (data, clientId) { 
+                    console.log('server::someEvent: ', data, ' :: ', clientId);
 
+                    self.network.send('someEvent', { msg:'echo from server for client ' + clientId }, clientId);
+                });
+
+                self.network.acceptConnections(true);
 
 
             });

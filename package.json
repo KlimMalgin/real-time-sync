@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/KlimMalgin/real-time-sync-server#readme",
   "dependencies": {
+    "express": "^4.15.5",
     "websocket": "^1.0.24"
   },
   "devDependencies": {
