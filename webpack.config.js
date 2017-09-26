@@ -9,8 +9,7 @@ var options = {};
 
 module.exports = {
     entry : {
-        export : path.resolve( __dirname, 'app/export.babel.js' ),
-        main   : path.resolve( __dirname, 'app/main.babel.js' ),
+        client : path.resolve( __dirname, 'app/client.js' ),
     },
     output : {
         path       : path.resolve( __dirname, './dist/' ),
@@ -27,7 +26,7 @@ module.exports = {
     resolve : {
         unsafeCache : true,
         modules     : [
-            /*path.resolve('./node_modules'),*/
+            path.resolve('./node_modules'),
         ],
     },
     performance : { hints: false },
@@ -41,7 +40,15 @@ if ( process.env.NODE_ENV === 'production' ) {
     module.exports.plugins = ( module.exports.plugins || [] ).concat( [
         new webpack.DefinePlugin( { 'process.env' : {
             NODE_ENV : `"${process.env.NODE_ENV}"`,
+            IS_CLIENT: `"${process.env.IS_CLIENT}"`,
         } } ),
         new webpack.optimize.UglifyJsPlugin( { sourceMap: options.devtool && options.devtool.indexOf('source-map') >= 0 } ),
+    ] );
+} else {
+    module.exports.plugins = ( module.exports.plugins || [] ).concat( [
+        new webpack.DefinePlugin( { 'process.env' : {
+            NODE_ENV : `"${process.env.NODE_ENV}"`,
+            IS_CLIENT: `"${process.env.IS_CLIENT}"`,
+        } } ),
     ] );
 }

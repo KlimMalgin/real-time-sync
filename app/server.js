@@ -1,6 +1,6 @@
 
 var IgeClass = require('./components/common/IgeClass');
-var IgeNetIoComponent = require('./components/common/IgeNetIoComponent');
+var IgeNetIoServerComponent = require('./components/common/IgeNetIoServerComponent');
 
 // Real time sync server
 var RtsServer = IgeClass.extend({
@@ -11,7 +11,7 @@ var RtsServer = IgeClass.extend({
 
         console.log('Start init function');
 
-        this.addComponent(IgeNetIoComponent)
+        this.addComponent(IgeNetIoServerComponent)
             // Start the network server
             .network.start(3003, function () {
 
@@ -27,4 +27,4 @@ var RtsServer = IgeClass.extend({
 });
 
 
-var RtsServerInstance = new RtsServer();
+var rtsServerInstance = new RtsServer();

@@ -1,13 +1,15 @@
+
+var isClient = (typeof(IS_CLIENT) !== 'undefined' && IS_CLIENT);
+
 /**
  * Emulation ige object
  */
-
 var ige = {
     _timeScale: 1,
     _currentTime: 0,
 
-	isServer: (typeof(module) !== 'undefined' && typeof(module.exports) !== 'undefined'),
-	isClient: !this.isServer,
+	isServer: !isClient && (typeof(module) !== 'undefined' && typeof(module.exports) !== 'undefined'),
+	isClient: isClient,
 
     /**
 	 * Gets / sets the current time scalar value. The engine's internal

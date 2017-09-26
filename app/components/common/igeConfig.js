@@ -30,7 +30,7 @@ igeConfig = {
 };
 
 if (igeConfig.debug._node) {
-	igeConfig.debug._util = require('util');
+	igeConfig.debug._util = function () {}; 	//require('util');
 }
 
 if (typeof(module) !== 'undefined' && typeof(module.exports) !== 'undefined') { module.exports = igeConfig; }
