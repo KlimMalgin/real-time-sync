@@ -2,7 +2,7 @@
   "name": "real-time-sync-server",
   "version": "1.0.0",
   "description": "",
-  "main": "./app/client.js",
+  "main": "./index.js",
   "scripts": {
     "dev": "IS_CLIENT=true ./node_modules/.bin/webpack --progress",
     "dev-open": "IS_CLIENT=true ./node_modules/.bin/webpack-dev-server --open --hot",

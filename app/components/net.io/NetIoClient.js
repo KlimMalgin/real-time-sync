@@ -3,8 +3,6 @@ var IgeClass = require('../common/IgeClass');
 var IgeEventingClass = require('../common/IgeEventingClass');
 var WebSocket = require('websocket').w3cwebsocket;
 
-console.log('WebSocket: ', WebSocket);
-
 // Our namespace
 var NetIo = {};
 

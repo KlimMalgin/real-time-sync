@@ -9,7 +9,7 @@ var options = {};
 
 module.exports = {
     entry : {
-        client : path.resolve( __dirname, 'app/client.js' ),
+        client : path.resolve( __dirname, 'examples/echo/client.js' ),
     },
     output : {
         path       : path.resolve( __dirname, './dist/' ),

@@ -6,22 +6,25 @@ var IgeNetIoClientComponent = require('./components/common/IgeNetIoClientCompone
 var RtsClient = IgeClass.extend({
 	classId: 'Client',
 
-    init: function () {
+    init: function (options) {
         var self = this;
 
-        console.log('Start Client::init');
+        this.log('Start Client::init');
 
-        this.addComponent(IgeNetIoClientComponent);
-        this.network.start('http://localhost:3003', function () {
-            console.log('Start Client::network::start');
-
-            self.network.define('someEvent', function () { console.log('client::someEvent: ', arguments); });
-
-            self.network.send('someEvent', {msg:'from client'});
-
-        });
+        if (options && options.url) {
+            this.addComponent(IgeNetIoClientComponent);
+            this.network.start(options.url, function () {
+                this.log('Start Client::network::start');
+                options.callback && options.callback.call(this);
+                // self.network.define('someEvent', function () { console.log('client::someEvent: ', arguments); });
+                // self.network.send('someEvent', {msg:'from client'});
+    
+            });
+        } else {
+            this.log('url required');
+        }
 
     },
 });
 
-var rtsClientInstance = new RtsClient();
+module.exports = RtsClient;
