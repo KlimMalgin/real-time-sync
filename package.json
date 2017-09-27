@@ -1,5 +1,5 @@
 {
-  "name": "real-time-sync-server",
+  "name": "real-time-sync",
   "version": "1.0.0",
   "description": "",
   "main": "./index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KlimMalgin/real-time-sync-server.git"
+    "url": "git+https://github.com/KlimMalgin/real-time-sync.git"
   },
   "author": "KlimMalgin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KlimMalgin/real-time-sync-server/issues"
+    "url": "https://github.com/KlimMalgin/real-time-sync/issues"
   },
-  "homepage": "https://github.com/KlimMalgin/real-time-sync-server#readme",
+  "homepage": "https://github.com/KlimMalgin/real-time-sync#readme",
   "dependencies": {
     "express": "^4.15.5",
     "websocket": "^1.0.24"
